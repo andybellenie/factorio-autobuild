@@ -499,8 +499,8 @@ local function try_upgrade(entity, player, state, flying_text_infos)
   local target_name = target_prototype.name
   local target_quality = (target_quality and target_quality.name) or "normal"
 
-  if entity.type == "underground-belt" and entity.neighbours then
-    return try_upgrade_paired_entity(entity, entity.neighbours, target_name, target_quality, player)
+  if entity.type == "underground-belt" and entity.underground_belt_neighbour then
+    return try_upgrade_paired_entity(entity, entity.underground_belt_neighbour, target_name, target_quality, player)
   else
     return try_upgrade_single_entity(entity, target_name, target_quality, player)
   end
